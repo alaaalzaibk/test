@@ -1,0 +1,24 @@
+<div class="container">
+
+    <form [formGroup]="role" (ngSubmit)="addRole()">
+        
+        <mat-card appearance="outlined">
+            <mat-card-title>Add New Permission</mat-card-title>
+            <mat-card-content>
+                <mat-form-field appearance="fill">
+                    <mat-label>Role Name</mat-label>
+                    <input matInput placeholder="Name" name="name" formControlName="name" />
+                </mat-form-field>
+                <p>
+                    <div *ngFor="let permission of allPermissions; let i = index">
+                        <mat-checkbox class="example-margin" (change)="onChange($event)" [value]="permission.permissionId">
+                            {{permission.permissionName}}</mat-checkbox>
+                    </div>
+
+            </mat-card-content>
+            <mat-card-actions>
+                <button type="submit" [disabled]="role.invalid" mat-flat-button>Submit</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>

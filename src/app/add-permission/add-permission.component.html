@@ -1,0 +1,18 @@
+<div class="container">
+
+    <form [formGroup]="permissionName" (ngSubmit)="addPermission()">
+        
+        <mat-card appearance="outlined">
+            <mat-card-title>Add New Permission</mat-card-title>
+            <mat-card-content>
+                <mat-form-field appearance="fill">
+                    <mat-label>Permission Name</mat-label>
+                    <input matInput placeholder="Name" name="name" formControlName="name" />
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions>
+                <button type="submit" [disabled]="permissionName.invalid" mat-flat-button>Submit</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</div>
